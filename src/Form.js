@@ -38,14 +38,14 @@ class Form extends Component {
             <>
                 <Cars color={this.state.color}/>
                 <h1>Commentaire</h1>
-                <form onSubmit={this.handleSubmitForm}>
-                    <div>
+                <form className="container" onSubmit={this.handleSubmitForm}>
+                    <div className="form-group">
                         <label>Pseudo</label>
-                        <input type="text" value={this.state.username} onChange={this.handlePseudo} />
+                        <input className="form-control" type="text" value={this.state.username} onChange={this.handlePseudo} />
                     </div>
-                    <div>
+                    <div className="form-group">
                         <label>Couleur</label>
-                        <select value={this.state.color} onChange={this.handleColor}> 
+                        <select className="custom-select mr-sm-2" value={this.state.color} onChange={this.handleColor}> 
                             {
                                 this.state.colors.map((color, index) => {
                                 return <option key={index} value={color}>{color}</option>
@@ -53,11 +53,11 @@ class Form extends Component {
                             }
                         </select>
                     </div>
-                    <div>
+                    <div className="form-group">
                         <label>Commentaire</label>
-                        <textarea value={this.state.comment} onChange={this.handleComments} />
+                        <textarea className="form-control" value={this.state.comment} onChange={this.handleComments} />
                     </div>
-                    <button>Valider</button>
+                    <button className="btn btn-outline-primary">Valider</button>
                 </form>
             </>
         )
